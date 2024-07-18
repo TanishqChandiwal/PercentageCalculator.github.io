@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<style>
+			#maths{
+				   font-weight:bold;
+				}
+				
+			input{
+				  width:20%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<!-- div1 -->
+			<div>
+				<br> <input type="number" id="sub1" placeholder="Marks Obrained In First Subject"> </br>
+				<br> <input type="number" id="sub2" placeholder="Marks Obrained In Second Subject"> </br>
+				<br> <input type="number" id="sub3" placeholder="Marks Obrained In Third Subject"> </br>
+				<br> <input type="number" id="sub4" placeholder="Marks Obrained In Fourth Subject"> </br>
+				<br> <input type="number" id="sub5" placeholder="Marks Obrained In Fifth Subject"> </br>
+				<br> <input type="number" id="total" placeholder="Outoff"> </br>
+			
+			<!-- button -->
+				<br> <button type="button" onclick="abc()"> Submit </button> </br>
+			
+			<!-- maths -->
+				<div id="maths" > </div>
+			<!-- hello -->
+				<div id="hello"> </div>
+			<!-- hello_1 -->
+				<div id="hello_1"> </div>
+			<!-- hello -->
+				<div id="maths_1"> </div>
+				
+			<!-- script opening -->
+				<script>
+					// function abc 
+					function abc(){
+							// marks obtained first subject 
+								var subject1 = parseInt(document.getElementById("sub1").value);
+							
+							// marks obtained in second subject 
+								var subject2 = parseInt(document.getElementById("sub2").value);
+								
+							// marks obtained in third subject 
+								var subject3 = parseInt(document.getElementById("sub3").value);
+								
+							// marks obtained in fourth subject 
+								var subject4 = parseInt(document.getElementById("sub4").value);
+							
+							// marks obtained in fifth subject 
+								var subject5 = parseInt(document.getElementById("sub5").value);
+								
+							// out off 
+								var outoff = document.getElementById("total").value;
+								
+							// 100 
+								var a = 100;
+								
+							// sum of all subjects or total of all subjects 
+								var sumofallsubjects = ((subject1) + (subject2) + (subject3) + (subject4) + (subject5));
+								
+							// first step of percentage
+								var division = sumofallsubjects / outoff;
+								
+							// second step of percentage
+								var percentage = division * a;
+								
+							// dividing by 5 by out off marks 
+								var f = outoff / 5;
+							
+							//to print the percentage obtained
+								document.getElementById("maths").innerHTML=percentage;
+							
+								if(subject1 < 0 || subject2 < 0 || subject3 < 0 || subject4 < 0 || subject5 < 0 || subject1 > f || subject2 > f || subject3 > f || subject4 > f || subject5 > f){
+										document.getElementById('hello').innerHTML="Invalid";
+										document.getElementById('hello').style.display="block";
+										document.getElementById('maths').style.	display="none";
+										document.getElementById('maths_1').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else if(subject1 <= 30 || subject2 <= 30 || subject3 <= 30 || subject4 <= 30 || subject5 <= 30){
+										document.getElementById('hello_1').innerHTML="FAIL";
+										document.getElementById('hello_1').style.display="block";
+										document.getElementById('maths').style.	display="none";
+										document.getElementById('maths_1').style.display="none";
+										document.getElementById('hello').style.display="none";
+									}else if(percentage < 35){
+										document.getElementById('maths_1').innerHTML="F";
+										document.getElementById('maths_1').style.display="block";
+										document.getElementById('maths').style.display="block";
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else if(percentage < 45){
+										document.getElementById('maths_1').innerHTML="D";
+										document.getElementById('maths_1').style.display="block";
+										document.getElementById('maths').style.display="block";
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else if(percentage < 60){
+										document.getElementById('maths_1').innerHTML="C";
+										document.getElementById('maths_1').style.display="block";
+										document.getElementById('maths').style.display="block";
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else if(percentage < 80){
+										document.getElementById('maths_1').innerHTML="B";
+										document.getElementById('maths_1').style.display="block";
+										document.getElementById('maths').style.display="block";
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else if(percentage <= 100){
+										document.getElementById('maths_1').innerHTML="A";
+										document.getElementById('maths_1').style.display="block";
+										document.getElementById('maths').style.display="block";
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="none";
+									}else{
+										document.getElementById('hello').style.display="none";
+										document.getElementById('hello_1').style.display="block";
+										document.getElementById('hello_1').innerHTML="some thing went worng"
+										document.getElementById('maths').style.display="none";
+										document.getElementById('maths_1').style.display="none";
+									}
+								}
+					</script>
+				<!-- script closing -->
+		</div>
+	</body>
+</html>
